@@ -41,10 +41,29 @@ class MyFrame2 extends JFrame{
         }
 }
 
+class MyFrame3 extends JFrame{
+    public MyFrame3(){
+        super("GridLayout 예제");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container contentPane = getContentPane();
+
+        contentPane.setLayout(new GridLayout(2, 5));
+
+        for (int i = 0; i < 10 ; i++) {
+            String text = Integer.toString(i);
+            JButton button = new JButton(text);
+            add(button);
+
+        }
+        setSize(500, 200);
+        setVisible(true);
+        }
+}
+
 public class gee extends JFrame{
     public static void main(String[] args) {
           
-        MyFrame2 frame = new MyFrame2();
+        MyFrame3 frame = new MyFrame3();
         
     }
 }
