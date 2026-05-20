@@ -60,6 +60,13 @@ class MyFrame3 extends JFrame{
         }
 }
 
+
+class MyFrame4 extends JFrame{
+    public MyFrame4(){
+        
+        }
+}
+
 public class gee extends JFrame{
     public static void main(String[] args) {
           
