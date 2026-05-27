@@ -1,3 +1,59 @@
+# 13주차
+
+- 키 입력 시, 다음 세 경우 각각 key 이벤트 발생
+    - 키를 누르는 순간
+    - 누르니를 떼는 순간
+- 키 이벤트를 받을 수 있는 조건
+    - 모든 컴포넌트
+    - 현재 포커스를 가진 컴포넌트가 키 이벤트 독점
+- 포커스
+    - 컴포넌트나 응용프로그램이 키 이벤트를 독점하는 권한
+    - 컴포넌트에 포커스 설정 방법
+- KeyListener
+    - 응용프로그램에서 KeyListener를 상속받아 키 리스너 구현
+    - KeyListener의 3개 메소드
+        - void keyPressed(KeyEvent e){}
+    - 컴포넌트에 키 이벤트 리스너 달기
+        - component.addKeyListener(myKeyListener);
+- 유니코드 키의 특징
+    - 국제 산업 표준
+    - 전 세계의 문자를 컴퓨터에서 일관되게 표현하기 위한 코드 체계
+    - 문자들에 대해서만 키 코드 값 정의 : A~Z , a~z, 0~9, !, @,# 등
+- KeyEvent 객체
+    - 입력된 키 정보를 가진 이벤트 객체
+    - KeyEvent 객체의 메소드로 입력된 키 판별
+- KeyEvent 객체의 메소드로 입력된 키 판별
+    - char KeyEvent,getKeyChar()
+    - 키의 유니코드 문자 값 리턴
+    - Unicode 문자 키인 경우에만 의미 있음
+    - 입력된 키를 판별하기 위해 문자 값과 비교하면 됨
+- int KeyEvent.getKeyCode()
+    - 유니코드 키 포함
+    - 모든 키에 대한 정수형 키 코드 리턴
+    - 입력된 키를 판별하기 위해 가상키 값과 비교하여야 함
+    - 가상 키 값은 KeyEvent 클래스에 상수로 선언
+- Mouse 이벤트와 MouseListener, MouseMotionListener
+    - Mouse 이벤트 : 사용자의 마우스 조작에 따라 발생하는 이벤트
+        - mouseClicked() : 마우스가 눌러진 위치에서 그대로 떼어질 때 호출
+        - mouseReleased() : 마우스가 눌러진 위치에서 그대로 떼어지든 아니든 항상 호출
+        - mouseDragged() : 마우스가 드래그되는 동안 계속 여러번 호출
+    - 마우스가 눌러진 위치에서 떼어지는 경우 메소드 호출 순서
+        
+        ```java
+        mousePressed(), mouseReleased(), mouseClicked()
+        ```
+        
+    - 마우스가 드래그 될 때 호출되는 메소드 호출 순서
+        
+        ```java
+        mousePressed(), mouseDragged(), mouseDragged(), mouseReleased()
+        ```
+        
+
+fornt 를 이용해서 문자 그리기, 도형그리기 시험에 나옴
+
+통신 프로그램 소켓 프로그램 스레드 나옴
+
 # 12주차
 
 - 이벤트 기반 프로그래밍
